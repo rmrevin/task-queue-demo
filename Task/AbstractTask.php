@@ -53,7 +53,7 @@ abstract class AbstractTask extends SimpleRecord
             $result = PDOContainer::get()
                 ->perform('UPDATE task SET status = :status_done, result = :result, finished = :now WHERE id = :id', [
                     'id' => $this->id,
-                    'result' => $this->result,
+                    'result' => json_encode($this->result),
                     'status_done' => $this->status,
                     'now' => $this->finished, // пришлось отказаться от NOW() для поддержки тестов в sqlite
                 ])->execute();
@@ -95,7 +95,7 @@ abstract class AbstractTask extends SimpleRecord
 
         $params = [
             'id' => $this->id,
-            'message' => $message,
+            'message' => json_encode($this->result),
             'status_error' => $this->status,
             'retries' => $this->retries,
         ];
@@ -110,7 +110,7 @@ abstract class AbstractTask extends SimpleRecord
 
             $params = [
                 'id' => $this->id,
-                'message' => $message,
+                'message' => json_encode($this->result),
                 'status_new' => $this->status,
                 'retries' => $this->retries,
                 'deffer' => $this->deffer,
@@ -178,7 +178,7 @@ abstract class AbstractTask extends SimpleRecord
             PDOContainer::get()
                 ->perform('UPDATE task SET status = :status_error, result = :message WHERE id = :id', [
                     'id' => $id,
-                    'message' => $message,
+                    'message' => json_encode($message),
                     'status_error' => static::STATUS_ERROR,
                 ])->execute();
 

@@ -55,7 +55,7 @@ class AbstractTaskTest extends Database_TestCase
 
         $UpdatedTask = AbstractTask::find(2971107);
         $this->assertEquals(AbstractTask::STATUS_ERROR, $UpdatedTask->status);
-        $this->assertEquals('Test error', $UpdatedTask->result);
+        $this->assertEquals('"Test error"', $UpdatedTask->result);
         $this->assertEquals(1, $UpdatedTask->retries);
 
         $Task = AbstractTask::find(2971107);
@@ -63,7 +63,7 @@ class AbstractTaskTest extends Database_TestCase
 
         $UpdatedTask = AbstractTask::find(2971107);
         $this->assertEquals(AbstractTask::STATUS_NEW, $UpdatedTask->status);
-        $this->assertEquals('Test error with additional trying', $UpdatedTask->result);
+        $this->assertEquals('"Test error with additional trying"', $UpdatedTask->result);
         $this->assertEquals(2, $UpdatedTask->retries);
         $this->assertNotEmpty($UpdatedTask->deffer);
     }
