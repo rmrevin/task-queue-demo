@@ -85,7 +85,7 @@ Array
 ', $Task->result);
     }
 
-    public function testUserException()
+    public function testUserExceptionResult()
     {
         $Task = new BadTask;
         $Task->setAttributes([
@@ -110,7 +110,7 @@ Array
         $this->assertEquals(1, $Task->retries);
     }
 
-    public function testFatalException()
+    public function testFatalExceptionResult()
     {
         $Task = new BadTask;
         $Task->setAttributes([
@@ -131,6 +131,31 @@ Array
         $Task->execute();
 
         $this->assertEquals('Fatal error: Fatal bad task', $Task->result);
+        $this->assertEquals(AbstractTask::STATUS_ERROR, $Task->status);
+        $this->assertEquals(1, $Task->retries);
+    }
+
+    public function testExceptionResult()
+    {
+        $Task = new BadTask;
+        $Task->setAttributes([
+            'id' => 1,
+            'account_id' => 1,
+            'created' => null,
+            'deffer' => null,
+            'type' => null,
+            'task' => 'badTask',
+            'action' => 'exception',
+            'data' => null,
+            'status' => AbstractTask::STATUS_NEW,
+            'retries' => 0,
+            'finished' => null,
+            'result' => null,
+        ]);
+
+        $Task->execute();
+
+        $this->assertEquals('Exception: Exception bad task', $Task->result);
         $this->assertEquals(AbstractTask::STATUS_ERROR, $Task->status);
         $this->assertEquals(1, $Task->retries);
     }

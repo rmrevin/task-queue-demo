@@ -23,4 +23,9 @@ class BadTask extends AbstractTask
     {
         throw new FatalException('Fatal bad task');
     }
+
+    public static function exception()
+    {
+        throw new \Exception('Exception bad task');
+    }
 }

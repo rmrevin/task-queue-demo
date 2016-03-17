@@ -61,7 +61,11 @@ abstract class AbstractTask extends SimpleRecord
         } catch (UserException $e) {
             $this->setError(sprintf('User error: %s', $e->getMessage()), true);
         } catch (FatalException $e) {
+            $this->logError($e->getMessage(), debug_backtrace());
+
             $this->setError(sprintf('Fatal error: %s', $e->getMessage()), false);
+        } catch (\Exception $e) {
+            $this->setError(sprintf('Exception: %s', $e->getMessage()), false);
         }
 
         return $result;
@@ -120,6 +124,26 @@ abstract class AbstractTask extends SimpleRecord
         return PDOContainer::get()
             ->perform($statement, $params)
             ->execute();
+    }
+
+    /**
+     * @param string $message
+     * @param array $trace
+     * @return bool
+     */
+    protected function logError($message, $trace)
+    {
+        $result = false;
+
+        $fp = fopen(__DIR__ . '/../logs/error.log', 'a+');
+        if (is_resource($fp)) {
+            $result = fwrite($fp, $message . PHP_EOL) !== false;
+            fwrite($fp, json_encode($trace) . PHP_EOL);
+
+            fclose($fp);
+        }
+
+        return $result;
     }
 
     /**
