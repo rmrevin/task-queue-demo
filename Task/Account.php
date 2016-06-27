@@ -5,11 +5,11 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\Task;
+namespace TQ\Task;
 
 /**
  * Class Account
- * @package Plp\Task
+ * @package TQ\Task
  */
 class Account extends AbstractTask
 {

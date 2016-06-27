@@ -5,13 +5,13 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit;
+namespace TQ\tests\unit;
 
-use Plp\components\PDOContainer;
+use TQ\components\PDOContainer;
 
 /**
  * Class Database_TestCase
- * @package Plp\tests\unit
+ * @package TQ\tests\unit
  */
 class Database_TestCase extends \PHPUnit_Extensions_Database_TestCase
 {

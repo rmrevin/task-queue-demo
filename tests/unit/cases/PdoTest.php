@@ -5,14 +5,14 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\components\PDOContainer;
-use Plp\tests\unit\TestCase;
+use TQ\components\PDOContainer;
+use TQ\tests\unit\TestCase;
 
 /**
  * Class PdoTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class PdoTest extends TestCase
 {

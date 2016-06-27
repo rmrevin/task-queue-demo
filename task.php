@@ -6,7 +6,7 @@
 
 use Aura\Cli\CliFactory;
 use Aura\Cli\Status;
-use Plp\controllers\NextTaskController;
+use TQ\controllers\NextTaskController;
 
 require_once __DIR__ . '/vendor/autoload.php';
 

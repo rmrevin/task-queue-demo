@@ -5,13 +5,13 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\components;
+namespace TQ\tests\unit\components;
 
 use Aura\Cli\Stdio;
 
 /**
  * Class TestIO
- * @package Plp\tests\unit\components
+ * @package TQ\tests\unit\components
  */
 class TestIO
 {

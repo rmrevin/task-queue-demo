@@ -4,11 +4,11 @@
  * @author Revin Roman
  */
 
-namespace Plp\tests\unit;
+namespace TQ\tests\unit;
 
 /**
  * Class TestCase
- * @package Plp\tests\unit
+ * @package TQ\tests\unit
  */
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {

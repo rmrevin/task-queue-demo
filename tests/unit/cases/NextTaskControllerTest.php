@@ -5,17 +5,17 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\components\Config;
-use Plp\components\PDOContainer;
-use Plp\controllers\NextTaskController;
-use Plp\tests\unit\components\TestIO;
-use Plp\tests\unit\Database_TestCase;
+use TQ\components\Config;
+use TQ\components\PDOContainer;
+use TQ\controllers\NextTaskController;
+use TQ\tests\unit\components\TestIO;
+use TQ\tests\unit\Database_TestCase;
 
 /**
  * Class NextTaskControllerTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class NextTaskControllerTest extends Database_TestCase
 {
@@ -37,7 +37,7 @@ class NextTaskControllerTest extends Database_TestCase
         $Controller->run();
 
         $this->assertContains('call task domain::addzone() id#2971107', $IO->stdout);
-        $this->assertContains('Plp\Task\Domain::addzone', $IO->stdout);
+        $this->assertContains('TQ\Task\Domain::addzone', $IO->stdout);
 
         PDOContainer::get()
             ->perform('UPDATE task SET status = 2')

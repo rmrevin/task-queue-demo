@@ -5,13 +5,13 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\components;
+namespace TQ\components;
 
 use IntlDateFormatter;
 
 /**
  * Class Formatter
- * @package Plp\components
+ * @package TQ\components
  */
 class Formatter
 {

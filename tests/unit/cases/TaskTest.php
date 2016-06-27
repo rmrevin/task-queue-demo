@@ -5,17 +5,17 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\Task\Account;
-use Plp\Task\Domain;
-use Plp\Task\Integration;
-use Plp\Task\Message;
-use Plp\tests\unit\TestCase;
+use TQ\Task\Account;
+use TQ\Task\Domain;
+use TQ\Task\Integration;
+use TQ\Task\Message;
+use TQ\tests\unit\TestCase;
 
 /**
  * Class TaskTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class TaskTest extends TestCase
 {
@@ -28,11 +28,11 @@ class TaskTest extends TestCase
             'action' => 'bill',
         ]);
 
-        $this->assertInstanceOf('Plp\Task\AbstractTask', $Task);
+        $this->assertInstanceOf('TQ\Task\AbstractTask', $Task);
 
         $Task->execute();
 
-        $this->assertEquals('Plp\Task\Account::bill
+        $this->assertEquals('TQ\Task\Account::bill
 ', $Task->result);
     }
 
@@ -44,11 +44,11 @@ class TaskTest extends TestCase
             'action' => 'addzone',
         ]);
 
-        $this->assertInstanceOf('Plp\Task\AbstractTask', $Task);
+        $this->assertInstanceOf('TQ\Task\AbstractTask', $Task);
 
         $Task->execute();
 
-        $this->assertEquals('Plp\Task\Domain::addzone
+        $this->assertEquals('TQ\Task\Domain::addzone
 ', $Task->result);
     }
 
@@ -60,11 +60,11 @@ class TaskTest extends TestCase
             'action' => 'process',
         ]);
 
-        $this->assertInstanceOf('Plp\Task\AbstractTask', $Task);
+        $this->assertInstanceOf('TQ\Task\AbstractTask', $Task);
 
         $Task->execute();
 
-        $this->assertEquals('Plp\Task\Integration::process
+        $this->assertEquals('TQ\Task\Integration::process
 ', $Task->result);
     }
 
@@ -76,11 +76,11 @@ class TaskTest extends TestCase
             'action' => 'sms',
         ]);
 
-        $this->assertInstanceOf('Plp\Task\AbstractTask', $Task);
+        $this->assertInstanceOf('TQ\Task\AbstractTask', $Task);
 
         $Task->execute();
 
-        $this->assertEquals('Plp\Task\Message::sms
+        $this->assertEquals('TQ\Task\Message::sms
 ', $Task->result);
     }
 }

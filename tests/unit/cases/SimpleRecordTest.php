@@ -5,14 +5,14 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\Task\Domain;
-use Plp\tests\unit\TestCase;
+use TQ\Task\Domain;
+use TQ\tests\unit\TestCase;
 
 /**
  * Class SimpleRecordTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class SimpleRecordTest extends TestCase
 {

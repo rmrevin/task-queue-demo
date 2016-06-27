@@ -5,13 +5,13 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\Task;
+namespace TQ\Task;
 
 use Exception;
 
 /**
  * Class FatalException
- * @package Plp\Task
+ * @package TQ\Task
  */
 class FatalException extends Exception
 {

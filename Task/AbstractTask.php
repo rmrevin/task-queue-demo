@@ -5,17 +5,17 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\Task;
+namespace TQ\Task;
 
 use PDO;
-use Plp\components\Config;
-use Plp\components\Formatter;
-use Plp\components\PDOContainer;
-use Plp\components\SimpleRecord;
+use TQ\components\Config;
+use TQ\components\Formatter;
+use TQ\components\PDOContainer;
+use TQ\components\SimpleRecord;
 
 /**
  * Class AbstractTask
- * @package Plp\Task
+ * @package TQ\Task
  */
 abstract class AbstractTask extends SimpleRecord
 {
@@ -40,7 +40,7 @@ abstract class AbstractTask extends SimpleRecord
     {
         $result = false;
 
-        $class = sprintf('Plp\Task\%s', ucfirst($this->task));
+        $class = sprintf('TQ\Task\%s', ucfirst($this->task));
         $method = $this->action;
         $data = empty($this->data) ? null : json_decode($this->data, true);
 
@@ -209,7 +209,7 @@ abstract class AbstractTask extends SimpleRecord
             throw new \RuntimeException($message);
         };
 
-        $class = sprintf('Plp\Task\%s', ucfirst($data['task']));
+        $class = sprintf('TQ\Task\%s', ucfirst($data['task']));
 
         if (empty($data['task'])) {
             $throwError($data['id'], sprintf('Bad task configuration: empty task.'));

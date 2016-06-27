@@ -5,16 +5,16 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\controllers;
+namespace TQ\controllers;
 
 use Aura\Cli\Stdio;
-use Plp\components\Config;
-use Plp\components\Formatter;
-use Plp\Task\AbstractTask;
+use TQ\components\Config;
+use TQ\components\Formatter;
+use TQ\Task\AbstractTask;
 
 /**
  * Class NextTaskController
- * @package Plp\controllers
+ * @package TQ\controllers
  */
 class NextTaskController
 {

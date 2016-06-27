@@ -4,11 +4,11 @@
  * @author Revin Roman
  */
 
-namespace Plp\Task;
+namespace TQ\Task;
 
 /**
  * Class Domain
- * @package Plp\Task
+ * @package TQ\Task
  */
 class Domain extends AbstractTask
 {

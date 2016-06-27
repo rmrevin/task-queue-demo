@@ -5,14 +5,14 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\components\Config;
-use Plp\tests\unit\TestCase;
+use TQ\components\Config;
+use TQ\tests\unit\TestCase;
 
 /**
  * Class ConfigTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class ConfigTest extends TestCase
 {

@@ -5,11 +5,11 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\components;
+namespace TQ\components;
 
 /**
  * Class SimpleRecord
- * @package Plp\components
+ * @package TQ\components
  */
 abstract class SimpleRecord
 {

@@ -5,15 +5,15 @@
  * @link https://rmrevin.com
  */
 
-namespace Plp\tests\unit\cases;
+namespace TQ\tests\unit\cases;
 
-use Plp\Task\AbstractTask;
-use Plp\Task\BadTask;
-use Plp\tests\unit\Database_TestCase;
+use TQ\Task\AbstractTask;
+use TQ\Task\BadTask;
+use TQ\tests\unit\Database_TestCase;
 
 /**
  * Class AbstractTaskTest
- * @package Plp\tests\unit\cases
+ * @package TQ\tests\unit\cases
  */
 class AbstractTaskTest extends Database_TestCase
 {
@@ -27,7 +27,7 @@ class AbstractTaskTest extends Database_TestCase
     {
         $Task = AbstractTask::getNextTask();
 
-        $this->assertInstanceOf('Plp\Task\Domain', $Task);
+        $this->assertInstanceOf('TQ\Task\Domain', $Task);
         $this->assertEquals(2971107, $Task->id);
     }
 
@@ -35,7 +35,7 @@ class AbstractTaskTest extends Database_TestCase
     {
         $Task = AbstractTask::find(2971107);
 
-        $this->assertInstanceOf('Plp\Task\Domain', $Task);
+        $this->assertInstanceOf('TQ\Task\Domain', $Task);
         $this->assertEquals(2971107, $Task->id);
     }
 
@@ -77,7 +77,7 @@ class AbstractTaskTest extends Database_TestCase
         $this->assertTrue($result);
         $this->assertEquals(AbstractTask::STATUS_DONE, $Task->status);
         $this->assertNotEmpty($Task->finished);
-        $this->assertEquals('Plp\Task\Domain::addzone
+        $this->assertEquals('TQ\Task\Domain::addzone
 Array
 (
     [domain] => mydomain.ru
